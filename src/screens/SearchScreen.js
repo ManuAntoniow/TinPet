@@ -4,20 +4,6 @@ const SearchScreen = ({navigation}) => {
   return (
     <View style={styles.screen}>
       <Text style={styles.title}>SEARCH</Text>
-      <View style={styles.nav}>
-        <Button title='Home' onPress={() => {
-          navigation.navigate('Home')
-        }}/>
-        <Button title='Search' onPress={() => {
-          navigation.navigate('Search')
-        }}/>
-        <Button title='Messajes' onPress={() => {
-          navigation.navigate('Messajes')
-        }}/>
-        <Button title='Config' onPress={() => {
-          navigation.navigate('Config')
-        }}/>
-      </View>
     </View>
   )
 }
@@ -31,10 +17,6 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "Fredoka",
     margin: 10,
-  },
-  nav: {
-    display: "flex",
-    flexDirection: "row",
   },
 })
 

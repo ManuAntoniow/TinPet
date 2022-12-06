@@ -1,9 +1,9 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 
-const MessajesScreen = ({navigation}) => {
+const PersonalInfoScreen = ({navigation}) => {
   return (
     <View style={styles.screen}>
-      <Text style={styles.title}>MESSAJES</Text>
+      <Text style={styles.title}>INFO</Text>
     </View>
   )
 }
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default MessajesScreen
+export default PersonalInfoScreen

@@ -1,23 +1,30 @@
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { TouchableOpacity, StyleSheet, Text, View } from 'react-native'
+import Ionicons from '@expo/vector-icons/Ionicons'
 
 const ConfigScreen = ({navigation}) => {
   return (
     <View style={styles.screen}>
-      <Text style={styles.title}>CONFIG</Text>
-      <View style={styles.nav}>
-        <Button title='Home' onPress={() => {
-          navigation.navigate('Home')
-        }}/>
-        <Button title='Search' onPress={() => {
-          navigation.navigate('Search')
-        }}/>
-        <Button title='Messajes' onPress={() => {
-          navigation.navigate('Messajes')
-        }}/>
-        <Button title='Config' onPress={() => {
-          navigation.navigate('Config')
-        }}/>
-      </View>
+      <Text style={styles.title}>UserName</Text>
+      <TouchableOpacity style={styles.conteiner} onPress={() => {navigation.navigate('PersonalInfo')}}>
+        <Ionicons name="home-outline" size={30} color='black'/>
+        <Text style={styles.subTitle}>Personal Information</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.conteiner} onPress={() => {navigation.navigate('PersonalInfo')}}>
+        <Ionicons name="home-outline" size={30} color='black'/>
+        <Text style={styles.subTitle}>Notifications</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.conteiner} onPress={() => {navigation.navigate('PersonalInfo')}}>
+        <Ionicons name="home-outline" size={30} color='black'/>
+        <Text style={styles.subTitle}>Dogs</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.conteiner} onPress={() => {navigation.navigate('PersonalInfo')}}>
+        <Ionicons name="home-outline" size={30} color='black'/>
+        <Text style={styles.subTitle}>Liked</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.conteiner} onPress={() => {navigation.navigate('PersonalInfo')}}>
+        <Ionicons name="home-outline" size={30} color='black'/>
+        <Text style={styles.subTitle}>Settings</Text>
+      </TouchableOpacity>
     </View>
   )
 }
@@ -31,10 +38,16 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "Fredoka",
     margin: 10,
+    fontSize: 40,
   },
-  nav: {
-    display: "flex",
-    flexDirection: "row",
+  subTitle: {
+    fontFamily: "Fredoka",
+    margin: 10,
+  },
+  conteiner: {
+    display: 'flex',
+    flexDirection: 'row',
+    margin: 10,
   },
 })
 
