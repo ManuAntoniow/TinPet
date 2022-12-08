@@ -6,23 +6,23 @@ const ConfigScreen = ({navigation}) => {
     <View style={styles.screen}>
       <Text style={styles.title}>UserName</Text>
       <TouchableOpacity style={styles.conteiner} onPress={() => {navigation.navigate('PersonalInfo')}}>
-        <Ionicons name="home-outline" size={30} color='black'/>
+        <Ionicons name="person" size={30} color='black'/>
         <Text style={styles.subTitle}>Personal Information</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.conteiner} onPress={() => {navigation.navigate('PersonalInfo')}}>
-        <Ionicons name="home-outline" size={30} color='black'/>
+        <Ionicons name="notifications" size={30} color='black'/>
         <Text style={styles.subTitle}>Notifications</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.conteiner} onPress={() => {navigation.navigate('PersonalInfo')}}>
-        <Ionicons name="home-outline" size={30} color='black'/>
+        <Ionicons name="paw" size={30} color='black'/>
         <Text style={styles.subTitle}>Dogs</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.conteiner} onPress={() => {navigation.navigate('PersonalInfo')}}>
-        <Ionicons name="home-outline" size={30} color='black'/>
+        <Ionicons name="heart" size={30} color='black'/>
         <Text style={styles.subTitle}>Liked</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.conteiner} onPress={() => {navigation.navigate('PersonalInfo')}}>
-        <Ionicons name="home-outline" size={30} color='black'/>
+        <Ionicons name="cog" size={30} color='black'/>
         <Text style={styles.subTitle}>Settings</Text>
       </TouchableOpacity>
     </View>
