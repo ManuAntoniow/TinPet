@@ -1,7 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { StatusBar } from 'expo-status-bar'
+//FONT
 import { useFonts } from 'expo-font'
+
+//NAVIGATION
 import BottomTabNavigator from './src/navigation/BottomTabNavigator'
+
+//REDUX
+import { Provider } from "react-redux"
+import store from "./src/store"
 
 export default function App() {
   const [fontsLoaded] = useFonts ({
@@ -13,6 +18,8 @@ export default function App() {
   }
   
   return (
-    <BottomTabNavigator/>
+    <Provider store={store}>
+      <BottomTabNavigator />
+    </Provider>
   )
 }
