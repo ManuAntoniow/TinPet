@@ -11,7 +11,7 @@ import { useCallback, useReducer, useEffect, useState } from "react"
 
 import { COLORS } from "../constants/colors"
 import { useDispatch } from "react-redux"
-import { signup } from "../store/actions/auth.action"
+import { signUp } from "../store/actions/auth.action"
 
 const AuthScreen = () => {
   const dispatch = useDispatch()
@@ -19,7 +19,7 @@ const AuthScreen = () => {
   const [password, setPassword] = useState('')
 
   const handleSignUp = () => {
-    dispatch(signup(email, password))
+    dispatch(signUp(email, password))
   };
 
   return (
