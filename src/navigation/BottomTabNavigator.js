@@ -13,7 +13,6 @@ const BottomTabs = createBottomTabNavigator();
 
 export default BottomTabNavigator = () => {
   return (
-    <NavigationContainer>
       <BottomTabs.Navigator
         initialRouteName="HomeTab"
         screenOptions={{
@@ -67,7 +66,6 @@ export default BottomTabNavigator = () => {
           }}
         />
       </BottomTabs.Navigator>
-    </NavigationContainer>
   )
 }
 
