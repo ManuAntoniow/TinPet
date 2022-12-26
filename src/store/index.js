@@ -3,14 +3,14 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 //REDUCER
-import CategoryReducer from "./reducers/category.reducer";
-import DodReducer from "./reducers/dogs.reducer";
 import AuthReducer from "./reducers/auth.reducer";
+import SingInReducer from "./reducers/sing.reducer";
+import addDogReducer from "./reducers/places.reducer";
 
 const RootReducer = combineReducers({
-  categories: CategoryReducer,
-  dogs: DodReducer,
   auth: AuthReducer,
+  sing: SingInReducer,
+  places: addDogReducer,
 });
 
 export default createStore(RootReducer, applyMiddleware(thunk))

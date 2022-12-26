@@ -13,7 +13,7 @@ const ConfigScreen = ({navigation}) => {
         <Ionicons name="notifications" size={30} color='black'/>
         <Text style={styles.subTitle}>Notifications</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.conteiner} onPress={() => {navigation.navigate('DogCategories')}}>
+      <TouchableOpacity style={styles.conteiner} onPress={() => {navigation.navigate('DogList')}}>
         <Ionicons name="paw" size={30} color='black'/>
         <Text style={styles.subTitle}>Dogs</Text>
       </TouchableOpacity>

@@ -1,10 +1,10 @@
-import { URL_AUTH_SIGNUP } from "../../constants/DataBase";
+import { URL_AUTH_SIGNIN } from "../../constants/DataBase";
 
-export const SIGNUP = "SIGNUP";
+export const SIGNIN = "SIGNIN";
 
-export const signUp = (email, password) => {
+export const signIn = (email, password) => {
   return async (dispatch) => {
-    const response = await fetch(URL_AUTH_SIGNUP, {
+    const response = await fetch(URL_AUTH_SIGNIN, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -19,7 +19,7 @@ export const signUp = (email, password) => {
     const resData = await response.json();
     
     dispatch({
-      type: SIGNUP,
+      type: SIGNIN,
       token: resData.idToken,
       userId: resData.localId,
     })

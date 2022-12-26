@@ -9,11 +9,11 @@ import {
 } from "react-native"
 import { useCallback, useReducer, useEffect, useState } from "react"
 
-import { COLORS } from "../constants/colors"
+import { COLORS } from "../../constants/colors"
 import { useDispatch } from "react-redux"
-import { signUp } from "../store/actions/auth.action"
+import { signUp } from "../../store/actions/auth.action"
 
-const AuthScreen = () => {
+const AuthScreen = ({navigation}) => {
   const dispatch = useDispatch()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -28,7 +28,7 @@ const AuthScreen = () => {
       style={styles.screen}
     >
       <View style={styles.container}>
-        <Text style={styles.title}>INICIAR SESION</Text>
+        <Text style={styles.title}>CREAR CUENTA</Text>
         <View>
           <Text style={styles.label}>E-Mail</Text>
           <TextInput
@@ -60,7 +60,7 @@ const AuthScreen = () => {
         </View>
         <View style={styles.prompt}>
           <Text style={styles.promptMessage}>Ya tienes una cuenta ?</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {navigation.navigate('SingIn')}}>
             <Text style={styles.promptButton}>Ingresar</Text>
           </TouchableOpacity>
         </View>
@@ -93,6 +93,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     backgroundColor: 'white',
+  },
+  label: {
+    fontFamily: "Fredoka",
+    fontSize: 20,
   },
   prompt: {
     alignItems: "center",
