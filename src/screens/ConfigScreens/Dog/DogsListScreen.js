@@ -1,17 +1,22 @@
 import { useEffect } from "react";
-import { FlatList } from "react-native";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import PlaceItem from "../../../components/PlaceItem";
-import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
+import { TouchableOpacity, StyleSheet, Text, View, FlatList } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { COLORS } from "../../../constants/colors";
+import * as addressAction from "../../../store/actions/places.action";
 
 const DogsListScreen = ({ navigation }) => {
-  const places = useSelector((state) => state.places.places);
+  const dispatch = useDispatch()
+  const places = useSelector((state) => state.places.places)
 
   useEffect(() => {
-    console.log(places);
-  }, [places]);
+    console.log(places)
+  }, [places])
+
+  useEffect(() => {
+    dispatch(addressAction.loadDogs())
+  }, [])
 
   const renderItem = ({ item }) => (
       <PlaceItem
@@ -47,7 +52,7 @@ const styles = StyleSheet.create({
   conteiner: {
     display: 'flex',
     flexDirection: 'row-reverse',
-    marginTop: 45,
+    marginTop: 70,
     marginLeft: 15,
   },
   button: {

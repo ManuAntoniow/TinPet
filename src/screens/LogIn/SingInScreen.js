@@ -1,31 +1,42 @@
+//REACT
 import {
   KeyboardAvoidingView,
+  TouchableOpacity,
   StyleSheet,
   Text,
+  Image,
   View,
   TextInput,
   Button,
 } from "react-native"
-import { useCallback, useReducer, useEffect, useState } from "react"
+import { useState } from "react"
 
+//COMPONENTS
+import Ionicons from '@expo/vector-icons/Ionicons'
 import { COLORS } from "../../constants/colors"
+
+//READUX
 import { useDispatch } from "react-redux"
 import { signIn } from "../../store/actions/sing.action"
 
-const SingInScreen = () => {
+const SingInScreen = ({navigation}) => {
   const dispatch = useDispatch()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const handleSignIn = () => {
     dispatch(signIn(email, password))
-  };
+  }
 
   return (
     <KeyboardAvoidingView
       behavior="height"
       style={styles.screen}
     >
+      <Image source={require( '../../assets/img/backgroundAuth.jpg')} style={[styles.image, StyleSheet.absoluteFill]}/>
+      <TouchableOpacity style={styles.backBtn} onPress={() => {navigation.navigate('Register')}}>
+        <Ionicons name="arrow-back" size={30} color='black'/>
+      </TouchableOpacity>
       <View style={styles.container}>
         <Text style={styles.title}>INICIAR SESION</Text>
         <View>
@@ -59,8 +70,8 @@ const SingInScreen = () => {
         </View>
       </View>
     </KeyboardAvoidingView>
-  );
-};
+  )
+}
 
 export default SingInScreen;
 
@@ -70,6 +81,11 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primary,
     justifyContent: "center",
     alignItems: "center",
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
   },
   title: {
     fontSize: 24,
@@ -91,10 +107,10 @@ const styles = StyleSheet.create({
     height: 40,
     margin: 12,
     borderBottomWidth: 1,
-    color: '#ccc',
+    color: COLORS.detail,
   },
   button: {
     alignItems: "center",
     marginBottom: 8,
   },
-});
+})

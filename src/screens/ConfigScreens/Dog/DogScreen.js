@@ -32,7 +32,7 @@ const DogScreen = ({ navigation, route }) => {
   const handleTitleChange = (text) => setTitle(text);
 
   const handleSave = () => {
-    dispatch(addDog(title, image));
+    dispatch(addDog(title, image, location));
     navigation.navigate("DogList");
   };
 
@@ -40,7 +40,7 @@ const DogScreen = ({ navigation, route }) => {
     <>
       <View style={styles.screen}>
         <View style={styles.titleContainer}>
-        <Text style={styles.title}>Add new Dog</Text>
+          <Text style={styles.title}>Add new Dog</Text>
         </View>
         <ScrollView>
         <View style={styles.container}>
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "Fredoka",
-    marginTop: 40,
+    marginTop: 70,
     fontSize: 25,
     alignItems: 'center',
   },
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     height: 20,
     margin: 12,
     borderBottomWidth: 1,
-    color: '#ccc',
+    color: COLORS.detail,
   },
   label: {
     fontFamily: "Fredoka",

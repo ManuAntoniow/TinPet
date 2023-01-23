@@ -1,15 +1,20 @@
+//REACT
 import {
   KeyboardAvoidingView,
   StyleSheet,
   Text,
   View,
+  Image,
   TouchableOpacity,
   TextInput,
   Button,
 } from "react-native"
-import { useCallback, useReducer, useEffect, useState } from "react"
+import { useState } from "react"
 
+//COMPONENTS
 import { COLORS } from "../../constants/colors"
+
+//REDUX
 import { useDispatch } from "react-redux"
 import { signUp } from "../../store/actions/auth.action"
 
@@ -20,13 +25,17 @@ const AuthScreen = ({navigation}) => {
 
   const handleSignUp = () => {
     dispatch(signUp(email, password))
-  };
+  }
 
   return (
+    // <View style={styles.screen}>
+    //   <Image source={require( '../../assets/img/backgroundAuth.jpg')} style={styles.image}/>
+    // </View>
     <KeyboardAvoidingView
       behavior="height"
       style={styles.screen}
     >
+      <Image source={require( '../../assets/img/backgroundAuth.jpg')} style={[styles.image, StyleSheet.absoluteFill]}/>
       <View style={styles.container}>
         <Text style={styles.title}>CREAR CUENTA</Text>
         <View>
@@ -66,23 +75,21 @@ const AuthScreen = ({navigation}) => {
         </View>
       </View>
     </KeyboardAvoidingView>
-  );
-};
+  )
+}
 
-export default AuthScreen;
+export default AuthScreen
 
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: COLORS.primary,
     justifyContent: "center",
     alignItems: "center",
   },
-  title: {
-    fontSize: 24,
-    fontFamily: "Fredoka",
-    marginBottom: 18,
-    textAlign: 'center',
+  image: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
   },
   container: {
     width: "80%",
@@ -93,6 +100,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     backgroundColor: 'white',
+  },
+  title: {
+    fontSize: 24,
+    fontFamily: "Fredoka",
+    marginBottom: 18,
+    textAlign: 'center',
   },
   label: {
     fontFamily: "Fredoka",
@@ -115,10 +128,10 @@ const styles = StyleSheet.create({
     height: 40,
     margin: 12,
     borderBottomWidth: 1,
-    color: '#ccc',
+    color: COLORS.detail,
   },
   button: {
     alignItems: "center",
     marginBottom: 8,
   },
-});
+})

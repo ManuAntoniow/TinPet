@@ -16,8 +16,10 @@ export const signIn = (email, password) => {
       }),
     })
 
-    const resData = await response.json();
+    const resData = await response.json()
     
+    console.log(resData)
+
     dispatch({
       type: SIGNIN,
       token: resData.idToken,

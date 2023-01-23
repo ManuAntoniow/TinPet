@@ -1,4 +1,4 @@
-import { Platform, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { Tile } from 'react-native-elements'
 
 export const Card = ({ pic, title, caption }) => (
